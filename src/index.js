@@ -13,17 +13,22 @@ export default class SQLSessionStore {
   }
 
   async read(key) {
-    return this._knex('sessions')
+    const row = await this._knex('sessions')
       .where('id', key)
       .select();
+
+    return row ? JSON.parse(row.session) : null;
   }
 
   async write(key, sess) {
     this._knex('sessions')
       .where('id', key)
-      .update({ session: sess })
+      .update({ session: JSON.stringify(sess) })
       .catch(() => {
-        this._knex('sessions').insert({ id: key, session: sess });
+        this._knex('sessions').insert({
+          id: key,
+          session: JSON.stringify(sess),
+        });
       });
   }
 
