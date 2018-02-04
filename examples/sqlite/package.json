@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bottender": "latest",
+    "bottender-session-sql": "latest",
     "knex": "^0.14.2",
     "sqlite3": "^3.1.13"
   },

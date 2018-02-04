@@ -1,6 +1,5 @@
 const { ConsoleBot } = require('bottender');
-
-const SQLSessionStore = require('../../src');
+const SQLSessionStore = require('bottender-session-sql');
 
 const knexfile = require('./knexfile');
 
