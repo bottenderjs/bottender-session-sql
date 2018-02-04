@@ -1,6 +1,7 @@
 # bottender-session-sql
 
 [![npm](https://img.shields.io/npm/v/bottender-session-sql.svg?style=flat-square)](https://www.npmjs.com/package/bottender-session-sql)
+[![Build Status](https://travis-ci.org/bottenderjs/bottender-session-sql.svg?branch=master)](https://travis-ci.org/bottenderjs/bottender-session-sql)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 > SQL Session Store for [Bottender](https://github.com/Yoctol/bottender).
