@@ -13,7 +13,7 @@ module.exports = class SQLSessionStore {
   }
 
   async read(key) {
-    const row = await this._knex('sessions')
+    const [row] = await this._knex('sessions')
       .where('id', key)
       .select();
 
@@ -21,15 +21,16 @@ module.exports = class SQLSessionStore {
   }
 
   async write(key, sess) {
-    await this._knex('sessions')
-      .where('id', key)
-      .update({ session: JSON.stringify(sess) })
-      .catch(() =>
-        this._knex('sessions').insert({
-          id: key,
-          session: JSON.stringify(sess),
-        })
-      );
+    try {
+      await this._knex('sessions').insert({
+        id: key,
+        session: JSON.stringify(sess),
+      });
+    } catch (err) {
+      await this._knex('sessions')
+        .where('id', key)
+        .update({ session: JSON.stringify(sess) });
+    }
   }
 
   async destroy(key) {

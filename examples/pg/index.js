@@ -10,6 +10,7 @@ const bot = new ConsoleBot({
 
 bot.onEvent(async context => {
   await context.sendText('Hello World');
+  context.setState({ count: (context.state.count || 0) + 1 });
 });
 
 bot.createRuntime();
