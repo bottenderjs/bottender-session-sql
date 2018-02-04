@@ -2,7 +2,7 @@ const knex = require('knex');
 
 const MINUTES_IN_ONE_YEAR = 365 * 24 * 60;
 
-export default class SQLSessionStore {
+module.exports = class SQLSessionStore {
   constructor(config, expiresIn) {
     this._knex = knex(config);
     this._expiresIn = expiresIn || MINUTES_IN_ONE_YEAR;
@@ -21,20 +21,20 @@ export default class SQLSessionStore {
   }
 
   async write(key, sess) {
-    this._knex('sessions')
+    await this._knex('sessions')
       .where('id', key)
       .update({ session: JSON.stringify(sess) })
-      .catch(() => {
+      .catch(() =>
         this._knex('sessions').insert({
           id: key,
           session: JSON.stringify(sess),
-        });
-      });
+        })
+      );
   }
 
   async destroy(key) {
-    this._knex('sessions')
+    await this._knex('sessions')
       .where('id', key)
       .del(key);
   }
-}
+};

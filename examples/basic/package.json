@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "bottender": "latest",
+    "knex": "^0.14.2",
+    "pg": "^7.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "migrate": "knex migrate:latest"
+  }
+}
