@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/bottender-session-sql.svg?style=flat-square)](https://www.npmjs.com/package/bottender-session-sql)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-> [Work In Progress] SQL Session Store for [Bottender](https://github.com/Yoctol/bottender).
+> SQL Session Store for [Bottender](https://github.com/Yoctol/bottender).
 
 ## Installation
 
