@@ -13,6 +13,14 @@ npm install bottender-session-sql
 
 ## Usage
 
+Publish migrations:
+
+```
+bottender-session-sql migrations:publish
+```
+
+Code example:
+
 ```js
 const { ConsoleBot } = require('bottender');
 const SQLSessionStore = require('bottender-session-sql');
@@ -42,6 +50,10 @@ Knex config.
 ### expiresIn
 
 Default: `365 * 24 * 60`.
+
+## Examples
+
+See [examples](./examples) folder.
 
 ## License
 

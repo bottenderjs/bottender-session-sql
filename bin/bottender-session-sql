@@ -3,16 +3,18 @@ const path = require('path');
 
 const cpFile = require('cp-file');
 
-cpFile(
-  path.join(
-    __dirname,
-    '../',
-    'migrations',
-    '20180131230744_create_sessions_table.js'
-  ),
-  path.join(
-    process.cwd(),
-    'migrations',
-    '20180131230744_create_sessions_table.js'
-  )
-);
+if (process.argv[2] === 'migrations:publish') {
+  cpFile(
+    path.join(
+      __dirname,
+      '../',
+      'migrations',
+      '20180131230744_create_sessions_table.js'
+    ),
+    path.join(
+      process.cwd(),
+      'migrations',
+      '20180131230744_create_sessions_table.js'
+    )
+  );
+}

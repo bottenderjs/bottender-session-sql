@@ -2,8 +2,11 @@
   "name": "bottender-session-sql",
   "description": "SQL Session Store for Bottender.",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "main": "src/index.js",
+  "bin": {
+    "bottender-session-sql": "bin/bottender-session-sql"
+  },
   "scripts": {
     "precommit": "lint-staged",
     "lint": "eslint src examples",
