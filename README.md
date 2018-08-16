@@ -17,7 +17,7 @@ npm install bottender-session-sql
 Publish migrations:
 
 ```
-bottender-session-sql migrations:publish
+npx bottender-session-sql migrations:publish
 ```
 
 Code example:
