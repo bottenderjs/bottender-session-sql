@@ -4,7 +4,7 @@ const path = require('path');
 const cpFile = require('cp-file');
 
 if (process.argv[2] === 'migrations:publish') {
-  cpFile(
+  cpFile.sync(
     path.join(
       __dirname,
       '../',
